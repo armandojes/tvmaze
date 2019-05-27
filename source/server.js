@@ -7,6 +7,10 @@ import App from './app/app';
 
 const app = express();
 
+//statics server
+app.use('/public', express.static('./public'));
+
+
 app.get('*', function (request, response){
   const context = {};
   const content=renderToString(
