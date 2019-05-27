@@ -4,7 +4,10 @@
   "description": "show server side render react redux",
   "main": "build/server",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack --watch --mode development",
+    "dev": "nodemon ./build/server.js",
+    "build": "webpack -p --mode production",
+    "start": "node ./build/server.js"
   },
   "author": "@armandodejesus",
   "license": "MIT",
@@ -15,6 +18,7 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "mini-css-extract-plugin": "^0.5.0",
+    "nodemon": "^1.19.1",
     "redux-devtools-extension": "^2.13.7",
     "redux-logger": "^3.0.6",
     "style-loader": "^0.23.1",
@@ -23,6 +27,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
