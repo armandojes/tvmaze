@@ -4,11 +4,11 @@ function Markup (props){
   return (
     <html lang="en" dir="ltr">
       <head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <title>react server side render</title>
       </head>
       <body>
-        <div id="render_target"></div>
+        <div id="render_target" dangerouslySetInnerHTML={{__html: props.content}}/>
       </body>
     </html>
   )

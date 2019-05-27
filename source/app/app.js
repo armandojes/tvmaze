@@ -10,7 +10,7 @@ function App (props){
   return (
     <div name="aplication">
       <Switch>
-        <Route path="/home" exact component={List} />
+        <Route path="/" exact component={List} />
         <Route path="/view/:id" exact component={View} />
       </Switch>
     </div>
