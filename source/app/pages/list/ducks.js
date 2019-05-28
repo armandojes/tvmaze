@@ -1,17 +1,29 @@
 import initial_state from '../../initial_state';
+import api from '../../api';
 import { combineReducers } from 'redux';
+
+
+// a s y n c   a c t i o n s
+export const load_items = () => async (dispatch) => {
+  dispatch(set_loading(true));
+  const response = await api.get_list();
+  dispatch(set_items(response))
+  dispatch(set_loading(false));
+}
+
+
 
 // a c t i  o n s
 export function set_items (items) {
   return {
-    action: 'pages_list_set_items',
+    type: 'pages_list_set_items',
     payload: items,
   }
 }
-// a c t i  o n s
+
 export function set_loading (state) {
   return {
-    action: 'pages_list_set_loading',
+    type: 'pages_list_set_loading',
     payload: state,
   }
 }

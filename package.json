@@ -21,12 +21,14 @@
     "nodemon": "^1.19.1",
     "redux-devtools-extension": "^2.13.7",
     "redux-logger": "^3.0.6",
+    "reset-css": "^4.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "axios": "^0.18.0",
     "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

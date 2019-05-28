@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 // a c t i  o n s
 export function set_data (data) {
   return {
-    action: 'pages_view_set_data',
+    type: 'pages_view_set_data',
     payload: data,
   }
 }
@@ -12,7 +12,7 @@ export function set_data (data) {
 // a c t i  o n s
 export function set_loading (state) {
   return {
-    action: 'pages_view_set_loading',
+    type: 'pages_view_set_loading',
     payload: state,
   }
 }

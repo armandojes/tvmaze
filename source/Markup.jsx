@@ -11,6 +11,7 @@ function Markup (props){
       </head>
       <body>
         <div id="render_target" dangerouslySetInnerHTML={{__html: props.content}}/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
         <script src="/public/app.js" />
       </body>
     </html>
