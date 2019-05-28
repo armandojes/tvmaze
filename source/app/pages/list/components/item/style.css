@@ -1,0 +1,37 @@
+.wrapper{
+  width: 20%;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+}
+.body{
+  background: #1f4b47;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.name{
+  padding: 5px;
+  text-align: center;
+}
+.body:hover{
+  transform: scale(1.05);
+}
+@media screen and (max-width:700px) {
+  .wrapper{
+    width: 25%
+  }
+}
+@media screen and (max-width:500px) {
+  .wrapper{
+    width: 33.3%
+  }
+}
+@media screen and (max-width:400px) {
+  .wrapper{
+    width: 50%
+  }
+}

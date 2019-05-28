@@ -2,3 +2,6 @@ body{
   font-family: 'Roboto', sans-serif;
   background: #e9ebed;
 }
+img{
+  max-width: 100%;
+}

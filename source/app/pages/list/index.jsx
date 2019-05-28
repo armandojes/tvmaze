@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import Loading from '../../components/loading';
+import Container from '../../components/container';
 import { load_items } from './ducks';
 import { connect } from 'react-redux';
+import Item from './components/item'
+import style from './style';
 
 function List (props) {
 
@@ -12,13 +15,17 @@ function List (props) {
   },[]);
 
 
-  return (<Loading />)
+  if(props.loading) return (<Loading />)
 
-  return (
-    <div role="page" name="list">
-      lista de peliculas
-    </div>
+  if (props.items.length > 0) return (
+    <Container>
+      <div role="page" name="list" className={style.list_container}>
+        {props.items.map((item) => <Item key={item.id} {...item} />)}
+      </div>
+    </Container>
   )
+
+  return null;
 }
 
 

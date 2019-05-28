@@ -4738,6 +4738,29 @@ eval("__webpack_require__.r(__webpack_exports__);\nvar initial_state = {\n  page
 
 /***/ }),
 
+/***/ "./source/app/pages/list/components/item/index.jsx":
+/*!*********************************************************!*\
+  !*** ./source/app/pages/list/components/item/index.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ \"./source/app/pages/list/components/item/style.css\");\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\n\n\n\nfunction Item(props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"Link\"], {\n    id: \"article_\".concat(props.id),\n    className: _style__WEBPACK_IMPORTED_MODULE_1___default.a.wrapper,\n    to: \"/view/\".concat(props.id)\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: _style__WEBPACK_IMPORTED_MODULE_1___default.a.body\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n    src: props.show.image ? props.show.image.medium : '',\n    className: _style__WEBPACK_IMPORTED_MODULE_1___default.a.picture\n  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: _style__WEBPACK_IMPORTED_MODULE_1___default.a.name\n  }, props.name)));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Item);\n\n//# sourceURL=webpack:///./source/app/pages/list/components/item/index.jsx?");
+
+/***/ }),
+
+/***/ "./source/app/pages/list/components/item/style.css":
+/*!*********************************************************!*\
+  !*** ./source/app/pages/list/components/item/style.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\nmodule.exports = {\"wrapper\":\"_1cXDyapRXmjidAc\",\"body\":\"_2VSu7kt_mxK15A7\",\"name\":\"_2SHEuyBi1cbeYew\"};\n\n//# sourceURL=webpack:///./source/app/pages/list/components/item/style.css?");
+
+/***/ }),
+
 /***/ "./source/app/pages/list/ducks.js":
 /*!****************************************!*\
   !*** ./source/app/pages/list/ducks.js ***!
@@ -4758,7 +4781,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/loading */ \"./source/app/components/loading/index.jsx\");\n/* harmony import */ var _ducks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ducks */ \"./source/app/pages/list/ducks.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\n\n\n\n\nfunction List(props) {\n  Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useEffect\"])(function () {\n    if (props.items.length === 0 && !props.loading) {\n      props.dispatch(Object(_ducks__WEBPACK_IMPORTED_MODULE_2__[\"load_items\"])());\n    }\n  }, []);\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_loading__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null);\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    role: \"page\",\n    name: \"list\"\n  }, \"lista de peliculas\");\n}\n\nfunction mapSatetToProps(state) {\n  return {\n    loading: state.pages.list.loading,\n    items: state.pages.list.items\n  };\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__[\"connect\"])(mapSatetToProps)(List));\n\n//# sourceURL=webpack:///./source/app/pages/list/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/loading */ \"./source/app/components/loading/index.jsx\");\n/* harmony import */ var _components_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/container */ \"./source/app/components/container/index.jsx\");\n/* harmony import */ var _ducks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ducks */ \"./source/app/pages/list/ducks.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/item */ \"./source/app/pages/list/components/item/index.jsx\");\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style */ \"./source/app/pages/list/style.css\");\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style__WEBPACK_IMPORTED_MODULE_6__);\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\n\n\n\n\n\n\n\n\nfunction List(props) {\n  Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useEffect\"])(function () {\n    if (props.items.length === 0 && !props.loading) {\n      props.dispatch(Object(_ducks__WEBPACK_IMPORTED_MODULE_3__[\"load_items\"])());\n    }\n  }, []);\n  if (props.loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_loading__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null);\n  if (props.items.length > 0) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_container__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    role: \"page\",\n    name: \"list\",\n    className: _style__WEBPACK_IMPORTED_MODULE_6___default.a.list_container\n  }, props.items.map(function (item) {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_item__WEBPACK_IMPORTED_MODULE_5__[\"default\"], _extends({\n      key: item.id\n    }, item));\n  })));\n  return null;\n}\n\nfunction mapSatetToProps(state) {\n  return {\n    loading: state.pages.list.loading,\n    items: state.pages.list.items\n  };\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_4__[\"connect\"])(mapSatetToProps)(List));\n\n//# sourceURL=webpack:///./source/app/pages/list/index.jsx?");
+
+/***/ }),
+
+/***/ "./source/app/pages/list/style.css":
+/*!*****************************************!*\
+  !*** ./source/app/pages/list/style.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\nmodule.exports = {\"list_container\":\"_3F41Vhy9XDjcSsz\"};\n\n//# sourceURL=webpack:///./source/app/pages/list/style.css?");
 
 /***/ }),
 
@@ -4794,7 +4828,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction View(props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    role: \"page\",\n    name: \"list\"\n  }, \"detalles de una pelicula\");\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (View);\n\n//# sourceURL=webpack:///./source/app/pages/view/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ \"./source/app/pages/view/style.css\");\n/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/container */ \"./source/app/components/container/index.jsx\");\n\n\n\n\nfunction View(props) {\n  if (props.loading) return 'Loading...';\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_container__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    role: \"page\",\n    name: \"list\"\n  }, \"list\"));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (View);\n\n//# sourceURL=webpack:///./source/app/pages/view/index.jsx?");
+
+/***/ }),
+
+/***/ "./source/app/pages/view/style.css":
+/*!*****************************************!*\
+  !*** ./source/app/pages/view/style.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./source/app/pages/view/style.css?");
 
 /***/ }),
 
