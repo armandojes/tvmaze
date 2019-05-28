@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Item (props){
 
   return (
-    <Link id={`article_${props.id}`} className={style.wrapper} to={`/view/${props.id}`}>
+    <Link id={`article_${props.id}`} className={style.wrapper} to={`/view/${props.show.id}`}>
       <div className={style.body}>
         <img src={props.show.image ? props.show.image.medium : ''} className={style.picture}/>
         <div className={style.name}>

@@ -1,18 +1,42 @@
-import React from 'react';
-import style from './style';
+import React, { useEffect } from 'react';
 import Container from '../../components/container';
+import { connect } from 'react-redux';
+import { load_data } from './ducks';
+import style from './style';
+
+console.log(connect);
 
 function View (props) {
 
+  useEffect(() => {
+    props.dispatch(load_data(props.match.params.id));
+  },[])
+
+
   if (props.loading) return ('Loading...')
 
-  return (
+  if (props.data) return (
     <Container>
-      <div role="page" name="list">
-        list
+      <div role="page" name="view">
+        <div className={style.primary}>
+          <img className={style.picture} src={props.data.image.original} />
+          <div className={style.data}>
+            <div className={style.header}>{props.data.name}</div>
+            <div className={style.desc} dangerouslySetInnerHTML={{__html: props.data.summary}} />
+          </div>
+        </div>
       </div>
     </Container>
   )
+
+  return null
 }
 
-export default View;
+function mapStateToProps(state){
+  return {
+    loading: state.pages.view.loading,
+    data: state.pages.view.data,
+  }
+}
+
+export default connect(mapStateToProps)(View);

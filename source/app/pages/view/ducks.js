@@ -1,5 +1,15 @@
 import initial_state from '../../initial_state';
+import api from '../../api';
 import { combineReducers } from 'redux';
+
+// a s y n c   a c t i o n s
+export const load_data = (id) => async (dispatch) => {
+  dispatch(set_loading(true));
+  const response = await api.get_single(id);
+  dispatch(set_data(response));
+  dispatch(set_loading(false));
+}
+
 
 // a c t i  o n s
 export function set_data (data) {
@@ -9,7 +19,6 @@ export function set_data (data) {
   }
 }
 
-// a c t i  o n s
 export function set_loading (state) {
   return {
     type: 'pages_view_set_loading',
