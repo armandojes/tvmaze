@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import Container from '../../components/container';
 import { connect } from 'react-redux';
-import { load_data } from './ducks';
+import { load_data, set_initialState } from './ducks';
 import style from './style';
-
-console.log(connect);
 
 function View (props) {
 
   useEffect(() => {
+    if (!props.data)
     props.dispatch(load_data(props.match.params.id));
+    return () => {props.dispatch(set_initialState())}
   },[])
 
 
