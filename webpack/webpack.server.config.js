@@ -1,5 +1,6 @@
 const path = require('path');
 const extract = require('mini-css-extract-plugin')
+const webpack = require('webpack');
 
 const config = {
   entry: ["@babel/polyfill", path.resolve(__dirname, '../source/server.js')],
@@ -30,9 +31,15 @@ const config = {
   plugins: [
     new extract({
       filename: "style.css"
+    }),
+    new webpack.DefinePlugin({
+      PRODUCTION: JSON.stringify(process.env.NODE_ENV === 'production'),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      BASE: JSON.stringify(process.env.NODE_ENV === 'production' ? 'https://tvmaze.jesusmaster.now.sh' : 'http://localhost:3000'),
     })
   ],
   target: 'node',
 }
+
 
 module.exports = config;

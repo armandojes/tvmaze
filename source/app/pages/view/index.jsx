@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Container from '../../components/container';
+import Loading from '../../components/loading';
 import { connect } from 'react-redux';
 import { load_data, set_initialState } from './ducks';
 import style from './style';
@@ -13,7 +14,7 @@ function View (props) {
   },[])
 
 
-  if (props.loading) return ('Loading...')
+  if (props.loading) return (<Loading />)
 
   if (props.data) return (
     <Container>

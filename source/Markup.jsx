@@ -6,12 +6,12 @@ function Markup (props){
       <head>
         <meta charSet="utf-8" />
         <title>react server side render</title>
-        <base href="http://localhost:3000"/>
+        <base href={BASE}/>
         <link rel="stylesheet" type="text/css" href="public/style.css" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
       </head>
       <body>
-        <div id="render_target" dangerouslySetInnerHTML={{__html: props.content}}/>
+        <div id="render_target" dangerouslySetInnerHTML={{__html: props.content}}></div>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
         <script src="/public/app.js" />
       </body>

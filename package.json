@@ -1,13 +1,15 @@
 {
-  "name": "react-server-side-render",
+  "name": "tvmaze",
   "version": "1.0.0",
   "description": "show server side render react redux",
   "main": "build/server",
   "scripts": {
-    "watch": "webpack --watch --mode development",
+    "predeploy": "npm run build",
+    "watch": "set NODE_ENV=development&& webpack --watch --mode development",
     "dev": "nodemon ./build/server.js",
-    "build": "webpack -p --mode production",
-    "start": "node ./build/server.js"
+    "build": "set NODE_ENV=production&& webpack -p --mode production",
+    "start": "node ./build/server.js",
+    "deploy": "now"
   },
   "author": "@armandodejesus",
   "license": "MIT",
