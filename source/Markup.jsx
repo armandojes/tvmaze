@@ -13,6 +13,7 @@ function Markup (props){
       <body>
         <div id="render_target" dangerouslySetInnerHTML={{__html: props.content}}></div>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <script dangerouslySetInnerHTML={{__html: `window.__PRELOADED_STATE__=${JSON.stringify(props.state)}`}}></script>
         <script src="/public/app.js" />
       </body>
     </html>

@@ -33,8 +33,8 @@ app.get('*', async function (request, response){
     </Provider>
   );
 
-
-  const html = renderToStaticMarkup(<Markup content={content} />);
+  const preloaded_state = store.getState();
+  const html = renderToStaticMarkup(<Markup content={content} state={preloaded_state}/>);
   response.send(html);
   response.end();
 })
