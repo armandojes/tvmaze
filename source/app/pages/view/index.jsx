@@ -4,19 +4,20 @@ import Loading from '../../components/loading';
 import { connect } from 'react-redux';
 import { load_data, set_initialState } from './ducks';
 import style from './style';
+import { useFetch } from 'react-fetch-ssr';
 
 function View (props) {
 
-  useEffect(() => {
+  useFetch(async () => {
     if (!props.data)
-    props.dispatch(load_data(props.match.params.id));
-    return () => {props.dispatch(set_initialState())}
+    await props.dispatch(load_data(props.match.params.id));
   },[])
 
+  useEffect(() => {
+    return () => {props.dispatch(set_initialState())}
+  },[]);
 
-  if (props.loading) return (<Loading />)
-
-  if (props.data) return (
+  if (props.data && !props.loading) return (
     <Container>
       <div role="page" name="view">
         <div className={style.primary}>
@@ -30,7 +31,7 @@ function View (props) {
     </Container>
   )
 
-  return null
+  return <Loading />
 }
 
 function mapStateToProps(state){

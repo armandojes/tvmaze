@@ -5,19 +5,21 @@ import { load_items } from './ducks';
 import { connect } from 'react-redux';
 import Item from './components/item'
 import style from './style';
+import {useFetch} from 'react-fetch-ssr';
+
 
 function List (props) {
 
-  useEffect(() => {
+  useFetch(async () => {
     if (props.items.length === 0 && !props.loading){
-      props.dispatch(load_items());
+      await props.dispatch(load_items());
     }
   },[]);
 
 
-  if(props.loading) return (<Loading />)
 
-  if (props.items.length > 0) return (
+
+  if ((props.items.length > 0) && !props.loading) return (
     <Container>
       <div role="page" name="list" className={style.list_container}>
         {props.items.map((item) => <Item key={item.id} {...item} />)}
@@ -25,7 +27,7 @@ function List (props) {
     </Container>
   )
 
-  return null;
+  return <Loading />
 }
 
 
