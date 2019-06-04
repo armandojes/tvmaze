@@ -9,14 +9,14 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducer from './app/reducer.js';
 import path from 'path';
-
+import renderToStringAsync from 'react-fetch-ssr';
 
 const app = express();
 
 //statics server
 app.use('/public', express.static('./public'))
 
-app.get('*', function (request, response){
+app.get('*', async function (request, response){
 
   //create store
   const store = createStore(
@@ -25,7 +25,7 @@ app.get('*', function (request, response){
   );
 
   const context = {};
-  const content =renderToString(
+  const content = await renderToStringAsync(
     <Provider store={store}>
       <StaticRouter context={context} location={request.url}>
         <App />
