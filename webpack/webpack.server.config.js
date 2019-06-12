@@ -35,7 +35,7 @@ const config = {
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(process.env.NODE_ENV === 'production'),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      BASE: JSON.stringify(process.env.NODE_ENV === 'production' ? 'https://tvmaze.jesusmaster.now.sh' : 'http://localhost:3000'),
+      BASE: JSON.stringify(process.env.NODE_ENV === 'production' ? 'https://tvmaze.now.sh' : 'http://localhost:3000'),
     })
   ],
   target: 'node',
