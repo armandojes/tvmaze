@@ -14,7 +14,6 @@ function View (props) {
   },[])
 
 
-  if (props.loading) return (<Loading />)
 
   if (props.data) return (
     <Container>
@@ -30,7 +29,7 @@ function View (props) {
     </Container>
   )
 
-  return null
+  return (<Loading />)
 }
 
 function mapStateToProps(state){

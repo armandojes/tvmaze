@@ -15,8 +15,6 @@ function List (props) {
   },[]);
 
 
-  if(props.loading) return (<Loading />)
-
   if (props.items.length > 0) return (
     <Container>
       <div role="page" name="list" className={style.list_container}>
@@ -25,7 +23,7 @@ function List (props) {
     </Container>
   )
 
-  return null;
+  return (<Loading />)
 }
 
 
