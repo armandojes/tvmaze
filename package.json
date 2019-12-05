@@ -9,7 +9,7 @@
     "dev": "nodemon ./build/server.js",
     "build": "set NODE_ENV=production&& webpack -p --mode production",
     "start": "node ./build/server.js",
-    "deploy": "now"
+    "deploy": "npm run build && now --prod"
   },
   "author": "@armandodejesus",
   "license": "MIT",
