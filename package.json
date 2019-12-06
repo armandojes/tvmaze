@@ -9,7 +9,7 @@
     "dev": "nodemon ./build/server.js",
     "build": "set NODE_ENV=production&& webpack -p --mode production",
     "start": "node ./build/server.js",
-    "deploy": "now"
+    "deploy": "npm run build && now --prod"
   },
   "author": "@armandodejesus",
   "license": "MIT",
@@ -21,6 +21,8 @@
     "css-loader": "^2.1.0",
     "mini-css-extract-plugin": "^0.5.0",
     "nodemon": "^1.19.1",
+    "now": "^16.6.1",
+    "now-cli": "0.0.0",
     "redux-devtools-extension": "^2.13.7",
     "redux-logger": "^3.0.6",
     "reset-css": "^4.0.1",

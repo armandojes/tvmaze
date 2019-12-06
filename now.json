@@ -1,5 +1,6 @@
 {
-  "name": "tvmaze",
+  "name": "tvmaze-ssr",
+  "alias": "tvmaze-ssr",
   "version": 2,
   "builds": [
     { "src": "./build/server.js", "use": "@now/node-server" },
